@@ -1,36 +1,63 @@
 body {
-  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+button:first-child {
+  background-color: gray;
+  border: none;
+  padding: 7px;
+  border-radius: 10px;
+  width: 120px;
+  height: 40px;
+  margin-right: 10px;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+}
+button:nth-child(2) {
+  background-color: gray;
+  border: none;
+  padding: 7px;
+  border-radius: 10px;
+  width: 120px;
+  height: 40px;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
 }
 
 main {
-  border: 1px solid gray;
-  border-radius: 10px;
+  border: 1.5px solid rgba(128, 128, 128, 0.422);
+  width: 300px;
+  height: 200px;
   padding: 20px;
-  margin-top: 20px;
-  width: 200px;
-  display: grid;
-  place-items: center;
+  margin-top: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
 }
-
-div {
-  margin-bottom: 20px;
-}
-
-button {
-  padding: 10px 20px;
-  margin-right: 6px;
-}
-
-#logout_button {
-  width: 100%;
-  height: 50px;
-}
-
-img {
+main > img {
+  background-color: gray;
   width: 100px;
   height: 100px;
-  background-color: gray;
   border-radius: 100%;
-  margin-bottom: 10px;
-  object-fit: cover;
+}
+
+main > div {
+  font-size: large;
+}
+
+main > button {
+  width: 200px;
+  height: 40px;
+  background-color: gray;
+  color: white;
+  font-size: medium;
+  border-radius: 10px;
+  border: none;
 }
