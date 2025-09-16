@@ -41,8 +41,7 @@ app.post("/kakao/login", (req, res) => {
 
 app.post("/kakao/userinfo", (req, res) => {
   const { kakaoAccessToken } = req.body;
-  axios
-    .get("https://kapi.kakao.com/v2/user/me", {
+  axios.get("https://kapi.kakao.com/v2/user/me", {
       headers: {
         Authorization: `Bearer ${kakaoAccessToken}`,
         "Content-Type": " application/x-www-form-urlencoded;charset=utf-8",
@@ -73,8 +72,7 @@ app.post("/naver/login", (req, res) => {
 
 app.post("/naver/userinfo", (req, res) => {
   const { naverAccessToken } = req.body;
-  axios
-    .get("https://openapi.naver.com/v1/nid/me", {
+  axios.get("https://openapi.naver.com/v1/nid/me", {
       headers: {
         Authorization: `Bearer ${naverAccessToken}`,
       },
@@ -84,8 +82,7 @@ app.post("/naver/userinfo", (req, res) => {
 
 app.delete("/naver/logout", (req, res) => {
   const { naverAccessToken } = req.body;
-  axios
-    .post(
+  axios.post(
       `https://nid.naver.com/oauth2.0/token?grant_type=delete&client_id=${naverClientId}&client_secret=${naverClientSecret}&access_token=${naverAccessToken}&service_provider=NAVER`
     )
     .then((response) => res.send("로그아웃 성공"));
