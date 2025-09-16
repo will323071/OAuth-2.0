@@ -5,20 +5,12 @@ const cors = require('cors')
 const axios = require('axios')
 
 const app = express()
-const PORT = process.env.PORT || 3000;
 
 app.use(cors({
   origin: ['http://localhost:3000', 'http://127.0.0.1:3000'], methods: ["OPTIONS", "POST", "GET", "DELETE"],
 }))
 
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-const KAKAO_CLIENT_ID = process.env.KAKAO_CLIENT_ID;
-const NAVER_CLIENT_ID = process.env.NAVER_CLIENT_ID;
-const NAVER_CLIENT_SECRET = process.env.NAVER_CLIENT_SECRET;
-const REDIRECT_URI = process.env.REDIRECT_URI || `http://localhost:${PORT}/`;
 
 app.post('/kakao/login', (req, res) => {
   const authorizationCode = req.body.authorizationCode;
